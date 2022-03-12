@@ -1,22 +1,41 @@
 'use strict'
 
 {
-    function getValue1() {
-        return Number(document.querySelector("#value1"));
+    function getClient() {
+        return Number(document.querySelector("#client").value);
     }
-    function getValue2() {
-        return Number(document.querySelector("#value2"));
+    function getCost() {
+        return Number(document.querySelector("#cost").value);
     }
-    function getValue3() {
-        return Number(document.querySelector("#value3"));
+    function getChurnrate() {
+        let rate = Number(document.querySelector("#churn_rate").value);
+        if (0.1 <= rate) {
+            return rate;
+        }
+    }
+    function getImprovedrate() {
+        let rate = Number(document.querySelector("#churn_rate").value);
+        if (0.1 <= rate && rate < 1 )　{
+            return (rate - 0.1);
+        } else {
+            return (rate - 1);
+        }
     }
 
-    document.getElementById('cal').addEventListener('click',
+
+
+    document.getElementById('cal').addEventListener('click', 
         function() {
-            let value1 = getValue1();
-            let value2 = getValue2();
-            let value3 = getValue3();
-            document.getElementById('total') = (value1 * value2 * value3);
+            let client = getClient();
+            let cost = getCost();
+            let churn_rate = getChurnrate();
+            let improved_rate = getImprovedrate();
+
+            document.getElementById('currentMRR').value = (client * cost * (churn_rate * 0.01));
+            document.getElementById('currentARR').value = (client * cost * (churn_rate * 0.01) * 12);
+            document.getElementById('MRR').value = (client * cost * (improved_rate * 0.01));
+            document.getElementById('ARR').value = (client * cost * (improved_rate * 0.01) * 12);
         }
     )
 }
+

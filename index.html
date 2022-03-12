@@ -8,18 +8,27 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="wrap">
+    <div>
 
         <h1>料金シミュレーター</h1>
         
-        <input type="text" id="#value1">
-        <input type="text" id="#value2">
-        <input type="text" id="#value3">
+        <input type="text" id="client" />
+        <input type="text" id="cost" />
+        <input type="text" id="churn_rate" />
 
         <button type="button" id="cal">計算結果</button>
     </div>
     <div>
-        <label>合計:</label><input type="text" id="total" readonly width="100"/>
+        <label>現状MRR:</label><input type="text" id="currentMRR" readonly width="100"/>
+    </div>
+    <div>
+        <label>現状ARR:</label><input type="text" id="currentARR" readonly width="100"/>
+    </div>
+    <div>
+        <label>改善後MRR:</label><input type="text" id="MRR" readonly width="100"/>
+    </div>
+    <div>
+        <label>改善後ARR:</label><input type="text" id="ARR" readonly width="100"/>
     </div>
         <script src="js/main.js"></script>
 </body>
