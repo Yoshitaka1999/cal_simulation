@@ -6,30 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cal simulation</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-    <div>
-
-        <h1>料金シミュレーター</h1>
-        
-        <input type="text" id="client" />
-        <input type="text" id="cost" />
-        <input type="text" id="churn_rate" />
-
-        <button type="button" id="cal">計算結果</button>
-    </div>
-    <div>
-        <label>現状MRR:</label><input type="text" id="currentMRR" readonly width="100"/>
-    </div>
-    <div>
-        <label>現状ARR:</label><input type="text" id="currentARR" readonly width="100"/>
-    </div>
-    <div>
-        <label>改善後MRR:</label><input type="text" id="MRR" readonly width="100"/>
-    </div>
-    <div>
-        <label>改善後ARR:</label><input type="text" id="ARR" readonly width="100"/>
-    </div>
-        <script src="js/main.js"></script>
+    <h1>料金シミュレーター</h1>
+    <form>
+        <label>月額費用：</label><input type="number" id="client" />
+        <label>ユーザー数：</label><input type="number" id="cost" />
+        <label>現状の解約率：</label><input type="number" id="churn_rate" />
+        <button type="button" id="cal" onclick="window.open('result.html','_blank')">計算結果</button>
+    </form> 
 </body>
 </html>
