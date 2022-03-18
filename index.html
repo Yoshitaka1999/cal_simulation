@@ -8,13 +8,23 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>料金シミュレーター</h1>
-    <form action="result.html" method="GET">
-        <label>月額費用：</label><input type="number" name="client" id="client" />
-        <label>ユーザー数：</label><input type="number" name="cost" id="cost" />
-        <label>現状の解約率：</label><input type="number" name="churn_rate" id="churn_rate" />
-        <button type="submit" id="sendButton">計算結果</button>
+    <h2>収益改善シミュレーション</h2>
+    <p>サービスの月額費用、ユーザー数、解約率を記入するだけで<br>KiZUKAIをご利用いただいた際の収益改善シミュレーションが可能です。</p>
+    <form id="form">
+        <div class="data">
+            <input type="text" name="cost" id="cost" /><label> 円</label>
+            <div class="err-msg-cost"></div>
+        </div>
+        <div class="data">
+            <input type="text" name="client" id="client" /><label> 人</label>
+            <div class="err-msg-client"></div>
+        </div>
+        <div class="data">
+            <input type="text" name="churn_rate" id="churn_rate" /><label> %</label>
+            <div class="err-msg-churn-rate"></div>
+        </div>
     </form> 
+    <button type="submit" id="sendButton">改善結果を見てみる</button>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
