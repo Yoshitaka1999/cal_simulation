@@ -2,8 +2,8 @@
 
 window.onload = function(){
     var data = location.href.split("?")[1];
-    var client = Number(data.split("=")[1].replace(/[^0-9]/g, ''));
-    var cost = Number(data.split("=")[2].replace(/[^0-9]/g, ''));
+    var cost = Number(data.split("=")[1].replace(/[^0-9]/g, ''));
+    var client = Number(data.split("=")[2].replace(/[^0-9]/g, ''));
     var churn_rate = Number(data.split("=")[3]);
 
     function getImprovedrate() {
@@ -16,8 +16,8 @@ window.onload = function(){
 
     var improve_rate = getImprovedrate();
     
-    document.getElementById("currentMRR").innerHTML = (client * cost * (churn_rate * 0.01));
-    document.getElementById("currentARR").innerHTML = (client * cost * (churn_rate * 0.01) * 12);
-    document.getElementById("MRR").innerHTML = (client * cost * (improve_rate * 0.01));
-    document.getElementById("ARR").innerHTML = (client * cost * (improve_rate * 0.01) * 12);
+    document.querySelector(".currentMRR").innerHTML = (client * cost * (churn_rate * 0.01));
+    document.querySelector(".currentARR").innerHTML = (client * cost * (churn_rate * 0.01) * 12);
+    document.querySelector(".improvedMRR").innerHTML = (client * cost * (improve_rate * 0.01));
+    document.querySelector(".improvedARR").innerHTML = (client * cost * (improve_rate * 0.01) * 12);
 }
